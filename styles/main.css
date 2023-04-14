@@ -1,9 +1,68 @@
-#movies-card{
-    border: solid 1px red;
-    height: 500px;
-    width: 500px;
+*{
+    font-family:'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
 }
-.filmes{
+.conteiner-central{
+    display: grid;
+    justify-content: center;
+    margin-top: 2em;
+    
+}
+.conteiner-btn-input{
+  padding: 1em;
+  margin: 1em;
+
+}
+.conteiner-btn-movie-serie{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 2em;
+    padding: 1em;
+}
+#movies , #serie {
+    padding: 0.5em;
+    margin: 1em;
+    background-color:#E61057 ;
+    border: none;
+    color: #fff;
+    
+}
+#movies:hover , #serie:hover{
+        background-color: #E67098;
+        cursor: pointer;
+        color: #7AFF00;
+}
+#search{
+    padding: 0.7em;
     font-size: 20px;
-    color: #aaff;
+    font-weight: bold;
+}
+#search:focus{
+    background-color: #E61057;
+}
+
+#btn{
+    padding: 0.5em;
+    margin: 1em;
+    background-color:#E61057 ;
+    border: none;
+    color: #fff;
+    height: 56px;
+}
+.conteiner-list-movies{
+    display: flex;
+    justify-content: flex-start;
+    border: solid 1px #E61057 ;
+    padding: 1em;
+    margin: 1em;
+}
+.styleListDOM{
+    list-style: none;
+    font-size: 1em;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.styleImgDOM{
+    height: 350px;
 }

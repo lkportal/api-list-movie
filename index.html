@@ -4,24 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
+    <title>Filme</title>
+    <!-- Links externos-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-     
+    <div class="conteiner-central">
+             
     <div class="conteiner-btn-input">
-        <span>Pesquisar:</span><input type="text" placeholder="Pesquisar filme" id="search">
+       <input type="text" placeholder="Pesquisar filme" id="search">
         <button id="btn">Buscar</button>
     </div>
-     <div id="movies-card">
+    <div class="conteiner-btn-movie-serie">
+        <button id="movies">Filmes</button>
+        <button id="serie">Series</button>
+        
+     </div>   
+        
+   
+     <div id="movies-card" class="conteiner-list-movies">
 
      </div>
+    </div>
 
 
 
 
     <script src="./script/entities/Api.js"  type="module" defer></script>
     <script src="./script/main.js"  type="module" defer></script>
-    <link rel="stylesheet" href="styles/main.css">
+    
 </body>
 </html>

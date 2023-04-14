@@ -5,7 +5,7 @@ import { ApiFecth,ApiFecthImg } from "./entities/Api.js"
 
 const cardMovie = document.getElementById('movies-card')
 const btn = document.getElementById('btn')
-const p = document.createElement('p')
+const ul = document.createElement('ul')
 const img = document.createElement('img')
 
 
@@ -14,24 +14,39 @@ const img = document.createElement('img')
 
 
 
-//Função de que bsucar da api os detalhe do filme
+//Função de que buscar da api os detalhe do filme
 btn.addEventListener('click', async()=>{
    const  movie = await  ApiFecth()
    const imgFecth = await ApiFecthImg()
    img.src = imgFecth
-    p.innerHTML = `
+   img.alt = `${movie.Title}`
+   img.classList.add('styleImgDOM')
+   ul.classList.add('styleListDOM')
+    ul.innerHTML = `
 
-        Titulo do Filme: ${movie.Title}
+        <li> Titulo: ${movie.Title} </li>
         <br>
-        Gênero: ${movie.Genre}
+        <li> Rank: ${movie.imdbRating} </li>
         <br>
-        Lançamento: ${movie.Year}
+        <li> Gênero: ${movie.Genre} </li>
         <br>
-        Tempo de Duração: ${movie.Runtime}
+        <li> Lançamento: ${movie.Year} </li>
+        <br>
+        <li> Tempo de Duração: ${movie.Runtime} </li>
+        <br>
+        <li> Idioma Oficial: ${movie.Language} </li>
+        <br>
+        <li> Dirigido e Escrito: ${movie.Writer} </li>
+        <br>
+        <li> Sinopse: ${movie.Plot} </li>
+
+
 
     `
+    
     cardMovie.appendChild(img)
-    cardMovie.appendChild(p)
+    cardMovie.appendChild(ul)
 
 })
+
 
