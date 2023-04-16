@@ -66,3 +66,13 @@
 .styleImgDOM{
     height: 350px;
 }
+.slide{
+    max-width: 3em;
+    height: 5em;
+    padding: 2em;
+    margin: 2em;
+}
+img{
+    height: 250px;
+    padding: 20px;
+}

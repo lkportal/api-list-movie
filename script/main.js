@@ -1,4 +1,4 @@
-import { ApiFecth,ApiFecthImg } from "./entities/Api.js"
+import { ApiFecth,ApiFecthImg,dataMovieHistory } from "./entities/Api.js"
 
 
 
@@ -6,7 +6,16 @@ import { ApiFecth,ApiFecthImg } from "./entities/Api.js"
 const cardMovie = document.getElementById('movies-card')
 const btn = document.getElementById('btn')
 const ul = document.createElement('ul')
-const img = document.createElement('img')
+const imgDetails = document.createElement('img')
+const slide = document.getElementById('slide')
+const img1 = document.createElement('img')
+const img2 = document.createElement('img')
+const img3 = document.createElement('img')
+const img4 = document.createElement('img')
+const img5 = document.createElement('img')
+const h1 = document.createElement('h1')
+
+
 
 
 
@@ -18,9 +27,9 @@ const img = document.createElement('img')
 btn.addEventListener('click', async()=>{
    const  movie = await  ApiFecth()
    const imgFecth = await ApiFecthImg()
-   img.src = imgFecth
-   img.alt = `${movie.Title}`
-   img.classList.add('styleImgDOM')
+   imgDetails.src = imgFecth
+   imgDetails.alt = `${movie.Title}`
+   imgDetails.classList.add('styleImgDOM')
    ul.classList.add('styleListDOM')
     ul.innerHTML = `
 
@@ -39,14 +48,37 @@ btn.addEventListener('click', async()=>{
         <li> Dirigido e Escrito: ${movie.Writer} </li>
         <br>
         <li> Sinopse: ${movie.Plot} </li>
-
-
-
     `
-    
-    cardMovie.appendChild(img)
+    if(dataMovieHistory.length >= 6){
+        dataMovieHistory.shift()
+       
+    }
+    if(dataMovieHistory.length >= 0){
+        h1.innerHTML = "Histórico"
+
+        slide.appendChild(h1)
+    }
+      
+     dataMovieHistory.length>=0?img1.src=dataMovieHistory[0]: img1.alt =''
+     dataMovieHistory.length>=2?img2.src=dataMovieHistory[1]: img2.alt =''
+     dataMovieHistory.length>=3?img3.src=dataMovieHistory[2]: img3.alt =''
+     dataMovieHistory.length>=4?img4.src=dataMovieHistory[3]: img4.alt =''
+     dataMovieHistory.length>=5?img5.src=dataMovieHistory[4]: img5.alt =''
+   
+   
+      
+
+      
+
+    slide.appendChild(img1)
+    slide.appendChild(img2)
+    slide.appendChild(img3)
+    slide.appendChild(img4)
+    slide.appendChild(img5)
+    cardMovie.appendChild(imgDetails)
     cardMovie.appendChild(ul)
 
 })
+
 
 
