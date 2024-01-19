@@ -7,7 +7,7 @@ let urlTitle = ''
 
 inputSearch.addEventListener('change', async (event)=>{
     waitSearchInput = await event.target.value
-    urlTitle = await  `http://www.omdbapi.com/?apikey=e92f4f42&t=${waitSearchInput}`
+    urlTitle = await  `//www.omdbapi.com/?apikey=e92f4f42&t=${waitSearchInput}`
     
 })
 
