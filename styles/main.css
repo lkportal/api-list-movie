@@ -4,7 +4,9 @@
     margin: 0;
 }
 .conteiner-central{
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     margin-top: 2em;
     
@@ -53,7 +55,7 @@
 .conteiner-list-movies{
     display: flex;
     justify-content: flex-start;
-    border: solid 1px #E61057 ;
+    
     padding: 1em;
     margin: 1em;
 }
@@ -75,4 +77,6 @@
 img{
     height: 250px;
     padding: 20px;
+    width: 200px;
+    height: 150px;
 }
